@@ -4,7 +4,7 @@ const Searchbox = ({ searchchange }) => {
   return (
     <div className="pa2">
       <input
-        className="pa5 ba b--green bg-lightest-blue"
+        className="pa2 ba b--green bg-lightest-blue"
         type="search"
         placeholder="search robots"
         onChange={searchchange}
