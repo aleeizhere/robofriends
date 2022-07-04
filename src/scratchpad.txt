@@ -1,0 +1,2 @@
+creating a component that will be overlapped on the card when the user would hover over the card.
+Passing this overlapping component with the props of CharacterName, RealName, Instagram, DOB, Age, AppearedIn.

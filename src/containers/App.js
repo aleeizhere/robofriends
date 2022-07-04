@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Cardlist from "../components/Cardlist";
 import Searchbox from "../components/Searchbox";
+import heistmembers from "../heistmembers";
 import "./App.css";
 import Scroll from "../components/Scroll";
+import ErrorBoundary from "../components/Errorboundary";
+
 class App extends Component {
   constructor() {
     super();
@@ -11,31 +14,36 @@ class App extends Component {
       searchfield: "",
     };
   }
+  /*
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) => this.setState({ robots: users }));
   }
+  */
+  componentDidMount() {
+    this.setState({ robots: heistmembers.map((member) => member) });
+  }
   //   search change pe jo jo krana hai ismain likhdo
   onsearchchange = (event) => {
     this.setState({ searchfield: event.target.value });
-    //   jiss element se event call hua hai uss element ki value event.target.value
-
-    // error will be thrown because the this keyword is not referring to the App component
-    // it is referring to the element where it is being called in our case that is input tag and input tag doesn't have robots.
-    // so whenever we use our own functions in the app component we should use arrow functions.
-    // console.log(filteredrobots);
-
-    // we took out filteredrobot from here to the render function.
-    // every time when the render function will be called the filteredrobots will be updated.
-    // the setState function actually makes the render function to be recalled & setState function is being called everytime the search changes.
-    // state changes the render function recalls
   };
+  //   jiss element se event call hua hai uss element ki value event.target.value
+
+  // error will be thrown because the this keyword is not referring to the App component
+  // it is referring to the element where it is being called in our case that is input tag and input tag doesn't have robots.
+  // so whenever we use our own functions in the app component we should use arrow functions.
+  // console.log(filteredrobots);
+
+  // we took out filteredrobot from here to the render function.
+  // every time when the render function will be called the filteredrobots will be updated.
+  // the setState function actually makes the render function to be recalled & setState function is being called everytime the search changes.
+  // state changes the render function recalls
   render() {
     // destructuring to replace this.state everywhere we used.
     const { robots, searchfield } = this.state;
     const filteredrobots = robots.filter((robot) => {
-      return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+      return robot.charname.toLowerCase().includes(searchfield.toLowerCase());
     });
     // changed robots.length === 0 to !robots.length
     // used ternary inplace of if else.
@@ -43,10 +51,18 @@ class App extends Component {
       <h1>Loading</h1>
     ) : (
       <div className="tc">
-        <h1 className="f1">RoboFriends</h1>
+        <h1 className="f1">
+          MONEY{" "}
+          <span className="heistbg">
+            <h1 className="f1">HEIST</h1>
+          </span>{" "}
+        </h1>
+        <p className="subhead">Cast</p>
         <Searchbox searchchange={this.onsearchchange} />
         <Scroll>
-          <Cardlist robots={filteredrobots} />
+          <ErrorBoundary>
+            <Cardlist robots={filteredrobots} />
+          </ErrorBoundary>
         </Scroll>
       </div>
     );

@@ -1,11 +1,25 @@
-@font-face {
-  font-family: "SEGA LOGO FONT";
-  font-style: normal;
-  font-weight: normal;
-  src: local("SEGA LOGO FONT"), url("SEGA.woff") format("woff");
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
 }
-h1{
-    font-family: "SEGA LOGO FONT";
-    font-weight: 200;
-    color: rgb(63, 201, 201);
+h1 {
+  font-weight: 600;
+  color: var(--white);
+}
+.heistbg {
+  background: linear-gradient(-90deg, rgb(97, 0, 0), rgb(197, 34, 34));
+  padding: 0 1%;
+  border-radius: 2px;
+}
+.heistbg h1 {
+  display: inline-block;
+  color: black;
+}
+.subhead {
+  font-size: 2rem;
+  margin-top: -3.5%;
+  color: var(--white);
+  font-weight: 200;
+  letter-spacing: 2px;
 }

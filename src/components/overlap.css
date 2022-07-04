@@ -1,0 +1,45 @@
+.infocontainer {
+  background-color: rgba(0, 0, 0, 0.452);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -100%;
+  padding: 10px;
+  transition: bottom 0.3s ease;
+  text-align: start;
+  z-index: 2;
+}
+.infocontainershow {
+  bottom: 0%;
+}
+.charname {
+  font-weight: 200;
+  color: var(--white);
+}
+.infocontainer .infobit {
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.infobit h4 {
+  font-weight: 200;
+  font-size: 1rem;
+}
+.infobit h3 {
+  font-weight: 400;
+}
+.infocontainer .socialmedia a {
+  width: 10px;
+  text-decoration: none;
+  color: var(--white);
+}
+.infocontainer .socialicon {
+  width: 100%;
+}
+.socialmedia h4{
+  margin-bottom: 0.5rem;
+}
+.infocontainer .socialicon span{
+  font-weight: 300;
+}
