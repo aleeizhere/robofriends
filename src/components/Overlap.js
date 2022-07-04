@@ -35,7 +35,8 @@ const Overlap = (props) => {
         <h4>Instagram</h4>
         <div className="socialicon">
           <a href={sociallink} target="_blank" rel="noreferrer">
-            <Instalogo fill="var(--white)" /> <span>{sociallink.split("/")[3]}</span>
+            <Instalogo fill="var(--white)" />{" "}
+            <span>{sociallink.split("/")[3]}</span>
           </a>
         </div>
       </div>

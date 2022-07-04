@@ -6,7 +6,7 @@
   position: absolute;
   bottom: -100%;
   padding: 10px;
-  transition: bottom 0.3s ease;
+  transition: bottom 0.5s ease;
   text-align: start;
   z-index: 2;
 }
@@ -33,13 +33,17 @@
   width: 10px;
   text-decoration: none;
   color: var(--white);
+  transition: color 0.3s ease;
+}
+.infocontainer .socialmedia a:hover {
+  color: var(--red);
 }
 .infocontainer .socialicon {
   width: 100%;
 }
-.socialmedia h4{
+.socialmedia h4 {
   margin-bottom: 0.5rem;
 }
-.infocontainer .socialicon span{
+.infocontainer .socialicon span {
   font-weight: 300;
 }
